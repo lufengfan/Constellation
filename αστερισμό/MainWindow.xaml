@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:αστερισμό"
+        xmlns:tn="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
         mc:Ignorable="d"
         Title="αστερισμό" Height="350" Width="525"
         AllowsTransparency="True" Background="#3F000000"
@@ -12,8 +13,19 @@
         Loaded="Window_Loaded"
         >
     <Grid>
+        <tn:TaskbarIcon
+            ToolTipText="αστερισμό"
+            MenuActivation="LeftOrRightClick" IconSource="αστερισμό.ico"
+            >
+            <tn:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="miClose" Header="关闭(_X)" Icon="" Click="miClose_Click"></MenuItem>
+                </ContextMenu>
+            </tn:TaskbarIcon.ContextMenu>
+        </tn:TaskbarIcon>
+
         <Canvas x:Name="canvas"></Canvas>
-        <Label x:Name="lblMousePosition" Content="Label" HorizontalAlignment="Left" Margin="440,46,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblMousePosition" HorizontalAlignment="Left" Margin="440,46,0,0" VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
 </Window>

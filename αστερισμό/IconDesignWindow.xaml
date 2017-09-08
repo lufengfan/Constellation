@@ -1,0 +1,461 @@
+﻿<Window x:Class="αστερισμό.IconDesignWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:αστερισμό"
+        mc:Ignorable="d"
+        Title="IconDesignWindow" Height="512" Width="512"
+        Background="Transparent"
+        AllowsTransparency="True" WindowStyle="None"
+        Loaded="Window_Loaded"
+        >
+    <Grid>
+        <Canvas x:Name="canvas" Width="512" Height="512">
+            <!--
+            <Image Width="685" Height="467" Source="image/北斗七星.jpg" Stretch="UniformToFill" 
+                   Opacity="0.5"
+                   Canvas.Left="-93" Canvas.Top="15" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-7.53"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            -->
+
+            <Canvas.Resources>
+                <local:ShapeCenterMultiValueConvertor x:Key="ShapeCenterMultiValueConvertor"></local:ShapeCenterMultiValueConvertor>
+                <Color x:Key="color北极星" >#FFC2BDFF</Color>
+                <SolidColorBrush x:Key="brush北极星" Color="{StaticResource color北极星}"></SolidColorBrush>
+                <Color x:Key="color天枢" >#FFFF871B</Color>
+                <SolidColorBrush x:Key="brush天枢" Color="{StaticResource color天枢}"></SolidColorBrush>
+                <Color x:Key="color天璇" >#FF75FF2C</Color>
+                <SolidColorBrush x:Key="brush天璇" Color="{StaticResource color天璇}"></SolidColorBrush>
+                <Color x:Key="color天玑" >#FF106989</Color>
+                <SolidColorBrush x:Key="brush天玑" Color="{StaticResource color天玑}"></SolidColorBrush>
+                <Color x:Key="color天权" >#FFFFA0A0</Color>
+                <SolidColorBrush x:Key="brush天权" Color="{StaticResource color天权}"></SolidColorBrush>
+                <Color x:Key="color玉衡" >#FF708105</Color>
+                <SolidColorBrush x:Key="brush玉衡" Color="{StaticResource color玉衡}"></SolidColorBrush>
+                <Color x:Key="color开阳" >#FF00C57F</Color>
+                <SolidColorBrush x:Key="brush开阳" Color="{StaticResource color开阳}"></SolidColorBrush>
+                <Color x:Key="color摇光" >#FFE148FF</Color>
+                <SolidColorBrush x:Key="brush摇光" Color="{StaticResource color摇光}"></SolidColorBrush>
+
+                <system:Double x:Key="opacity">0.5</system:Double>
+                <system:Double x:Key="strokeThickness">15</system:Double>
+            </Canvas.Resources>
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}" StrokeDashArray="1">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="北极星" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="北极星" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="北极星"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="北极星" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="北极星" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="北极星"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天枢" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天枢" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天枢"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天枢" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天枢" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天枢"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=北极星, Path=Fill.Color}" Offset="1"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=天枢, Path=Fill.Color}" Offset="0"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天枢" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天枢" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天枢"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天枢" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天枢" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天枢"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天璇" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天璇" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天璇"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天璇" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天璇" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天璇"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=天枢, Path=Fill.Color}" Offset="1"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=天璇, Path=Fill.Color}" Offset="0"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天璇" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天璇" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天璇"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天璇" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天璇" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天璇"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天玑" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天玑" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天玑"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天玑" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天玑" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天玑"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=天璇, Path=Fill.Color}" Offset="0"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=天玑, Path=Fill.Color}" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天玑" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天玑" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天玑"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天玑" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天玑" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天玑"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天权" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天权" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天权"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天权" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天权" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天权"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=天玑, Path=Fill.Color}" Offset="0"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=天权, Path=Fill.Color}" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天权" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天权" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天权"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="天权" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="天权" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="天权"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="玉衡" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="玉衡" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="玉衡"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="玉衡" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="玉衡" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="玉衡"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=天权, Path=Fill.Color}" Offset="0"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=玉衡, Path=Fill.Color}" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="玉衡" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="玉衡" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="玉衡"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="玉衡" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="玉衡" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="玉衡"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="开阳" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="开阳" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="开阳"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="开阳" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="开阳" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="开阳"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=玉衡, Path=Fill.Color}" Offset="0"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=开阳, Path=Fill.Color}" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            <Line Opacity="{StaticResource opacity}" StrokeThickness="{StaticResource strokeThickness}">
+                <Line.X1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="开阳" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="开阳" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="开阳"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X1>
+                <Line.Y1>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="开阳" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="开阳" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="开阳"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y1>
+                <Line.X2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="摇光" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="摇光" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="摇光"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>X</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.X2>
+                <Line.Y2>
+                    <MultiBinding Converter="{StaticResource ShapeCenterMultiValueConvertor}">
+                        <Binding ElementName="摇光" Path="(Canvas.Left)"></Binding>
+                        <Binding ElementName="摇光" Path="(Canvas.Top)"></Binding>
+                        <Binding ElementName="摇光"></Binding>
+                        <MultiBinding.ConverterParameter>
+                            <local:ShapeCenterValueTypes>Y</local:ShapeCenterValueTypes>
+                        </MultiBinding.ConverterParameter>
+                    </MultiBinding>
+                </Line.Y2>
+                <Line.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{Binding ElementName=开阳, Path=Fill.Color}" Offset="0"></GradientStop>
+                            <GradientStop Color="{Binding ElementName=摇光, Path=Fill.Color}" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>
+            
+            
+            
+            <Ellipse x:Name="北极星" Width="50" Height="50" Fill="{StaticResource brush北极星}" Canvas.Left="379" Canvas.Top="27">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color北极星}" ShadowDepth="0" BlurRadius="75"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="天枢" Width="35" Height="36" Fill="{StaticResource brush天枢}" Canvas.Left="160" Canvas.Top="80">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color天枢}" ShadowDepth="0" BlurRadius="50"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="天璇" Width="25" Height="25" Fill="{StaticResource brush天璇}" Canvas.Left="92" Canvas.Top="100">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color天璇}" ShadowDepth="0" BlurRadius="35"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="天玑" Width="45" Height="45" Fill="{StaticResource brush天玑}" Canvas.Left="88" Canvas.Top="213">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color天玑}" ShadowDepth="0" BlurRadius="55"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="天权" Width="30" Height="30" Fill="{StaticResource brush天权}" Canvas.Left="154" Canvas.Top="228">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color天权}" ShadowDepth="0" BlurRadius="65"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="玉衡" Width="30" Height="30" Fill="{StaticResource brush玉衡}" Canvas.Left="184" Canvas.Top="292">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color玉衡}" ShadowDepth="0" BlurRadius="45"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="开阳" Width="35" Height="35" Fill="{StaticResource brush开阳}" Canvas.Left="221" Canvas.Top="339" RenderTransformOrigin="1.556,4.25">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color开阳}" ShadowDepth="0" BlurRadius="50"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse x:Name="摇光" Width="45" Height="45" Fill="{StaticResource brush摇光}" Canvas.Left="217" Canvas.Top="428" AllowDrop="True">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="{StaticResource color摇光}" ShadowDepth="0" BlurRadius="55"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</Window>
